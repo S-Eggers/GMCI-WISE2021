@@ -4,21 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <title>Study Group Finder Login</title>
-    <script>
-
-    </script>
 </head>
 <body>
-    <form class="login-form center">
+    <form class="login-form center" id="form">
         <h1>Study Group Finder Login</h1>
         <label>
-            <input type="email" placeholder="E-Mail Adresse" name="email" />
+            <input type="email" placeholder="E-Mail Adresse" name="email" required/>
         </label>
         <label>
-            <input type="password" placeholder="Passwort" name="pwd" />
+            <input type="password" placeholder="Passwort" name="pwd" required/>
         </label>
-        <a class="button" href="#">Login</a>
+        <button type="submit" class="button" id="login">Login</button>
         <p>Noch kein Account vorhanden? <a href="register.html">Hier registrieren &#x2192;</a></p>
     </form>
 </body>
+<script>
+  document.getElementById("login").onclick = function (event) {
+    let prev = false;
+    document.getElementById("form").querySelectorAll("input").forEach((input) => {if(input.value.length < 1) prev = true;});
+    if(!prev) {
+      event.preventDefault();
+      window.location = "backend.html";
+    }
+  }
+</script>
 </html>
