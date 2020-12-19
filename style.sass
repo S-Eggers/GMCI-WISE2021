@@ -114,18 +114,35 @@ input
   max-height: 100%
   width: 100vw
   max-width: 100%
-
-header
-  grid-area: header
-  background-color: $blue
-
-main
-  grid-area: main
-  background: $red
-
-aside
-  grid-area: sidebar
-  background: $dark-blue
-
-footer
-  grid-area: footer
+  header
+    grid-area: header
+    background-color: $blue
+    nav
+      ul
+        display: flex
+        flex-wrap: nowrap
+        align-items: stretch
+        align-content: stretch
+        li
+          display: block
+          margin: auto
+          height: 80px
+          padding: 20px
+          a
+            display: block
+            height: 100%
+            padding: 10px
+            color: white
+            border-radius: 5px
+            line-height: 20px
+            &.active
+              background: $gray
+              color: $dark-blue
+  main
+    grid-area: main
+    // background: $red
+  aside
+    grid-area: sidebar
+    // background: $dark-blue
+  footer
+    // grid-area: footer

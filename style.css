@@ -132,24 +132,39 @@ input:focus::placeholder {
   width: 100vw;
   max-width: 100%;
 }
-
-header {
+.grid header {
   grid-area: header;
   background-color: #457b9d;
 }
-
-main {
+.grid header nav ul {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  align-content: stretch;
+}
+.grid header nav ul li {
+  display: block;
+  margin: auto;
+  height: 80px;
+  padding: 20px;
+}
+.grid header nav ul li a {
+  display: block;
+  height: 100%;
+  padding: 10px;
+  color: white;
+  border-radius: 5px;
+  line-height: 20px;
+}
+.grid header nav ul li a.active {
+  background: #eee;
+  color: #1d3557;
+}
+.grid main {
   grid-area: main;
-  background: #e63946;
 }
-
-aside {
+.grid aside {
   grid-area: sidebar;
-  background: #1d3557;
-}
-
-footer {
-  grid-area: footer;
 }
 
 /*# sourceMappingURL=style.css.map */
