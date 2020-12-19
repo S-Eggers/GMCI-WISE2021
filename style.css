@@ -3,6 +3,128 @@
   margin: 0;
   box-sizing: border-box;
   font-family: sans-serif;
+  color: #454545;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  max-width: 100%;
+  max-height: 100%;
+  background: #eee;
+  font-size: 14px;
+}
+
+section {
+  width: 100%;
+  max-width: 1000px;
+}
+
+a {
+  color: #457b9d;
+}
+a:hover {
+  text-decoration: none;
+  color: #1d3557;
+}
+
+h1 {
+  font-size: 28px;
+  margin-bottom: 25px;
+}
+
+button,
+.button {
+  color: white;
+  border: 2px solid #3d6fb7;
+  background: #457b9d;
+  padding: 10px 15px;
+  border-radius: 5px;
+  display: inline-block;
+  text-decoration: none;
+  transition: 0.5s ease border-color, 0.5s ease background-color;
+}
+button:hover,
+.button:hover {
+  border-color: #1d3557;
+  background: #1d3557;
+  color: white;
+  text-decoration: none;
+}
+
+input {
+  color: #457b9d;
+  border-bottom: 2px solid #457b9d;
+  border-top: none;
+  border-left: none;
+  border-right: 0;
+  padding: 15px 20px;
+  outline: none;
+  transition: 0.5s ease border-bottom-color, 0.5s ease color, 0.5s ease background-color;
+  width: 100%;
+  margin-bottom: 25px;
+}
+input::placeholder {
+  color: #457b9d;
+}
+input:focus {
+  border-color: #1d3557;
+  color: #1d3557;
+  background-color: #eee;
+}
+input:focus::placeholder {
+  color: #1d3557;
+}
+
+.login-form {
+  max-width: 400px;
+  padding: 25px;
+  background: white;
+}
+.login-form p {
+  margin-top: 15px;
+  font-size: 14px;
+}
+@media (max-width: 500px) {
+  .login-form {
+    max-width: 100%;
+    padding: 15px;
+  }
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+@media (max-width: 500px) {
+  .center {
+    left: 0;
+    right: 0;
+    top: 0;
+    transform: none;
+  }
+}
+
+#response {
+  display: none;
+  visibility: hidden;
+}
+#response.active {
+  display: block;
+  visibility: visible;
+  border: 1px solid #519657;
+  border-radius: 5px;
+  background: #b2fab4;
+  color: #519657;
+  margin-top: 25px;
+  padding: 15px;
+}
+#response.active a {
+  font-weight: bold;
+  text-decoration: none;
+  color: #519657;
 }
 
 /*# sourceMappingURL=style.css.map */

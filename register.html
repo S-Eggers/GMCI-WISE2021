@@ -1,10 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
+<link href="style.css" rel="stylesheet" />
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Study Group Finder Registrierung</title>
 </head>
 <body>
-
+<form class="login-form center" id="form">
+    <h1>Study Group Finder Registrierung</h1>
+    <label>
+        <input type="email" placeholder="E-Mail Adresse" name="email" required/>
+    </label>
+    <label>
+        <input type="text" placeholder="Benutzername" name="name" required/>
+    </label>
+    <label>
+        <input type="text" placeholder="Studiengang" name="topic" required/>
+    </label>
+    <label>
+        <input type="password" placeholder="Passwort" name="pwd" required/>
+    </label>
+    <button class="button" type="submit" id="register">Registrieren</button>
+    <p><a href="index.html">Zurück &#x2192;</a></p>
+    <div id="response">Sie habben sich erfolreich registriert. Sie werden nun zurück zum <a href="index.html">Login</a> geleitet.</div>
+</form>
+<script>
+  document.getElementById("register").onclick = function (event) {
+    let prev = false;
+    document.getElementById("form").querySelectorAll("input").forEach((input) => {if(input.value.length < 1) prev = true;});
+    if(!prev) {
+      event.preventDefault();
+      document.getElementById("response").classList.add("active");
+      setTimeout(function () {
+        window.location = "index.html";
+      }, 5000);
+    }
+  }
+</script>
 </body>
 </html>
