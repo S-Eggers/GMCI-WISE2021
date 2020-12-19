@@ -15,16 +15,11 @@ body {
   font-size: 14px;
 }
 
-section {
-  width: 100%;
-  max-width: 1000px;
-}
-
 a {
   color: #457b9d;
+  text-decoration: none;
 }
 a:hover {
-  text-decoration: none;
   color: #1d3557;
 }
 
@@ -125,6 +120,36 @@ input:focus::placeholder {
   font-weight: bold;
   text-decoration: none;
   color: #519657;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 80px auto 20%;
+  grid-template-rows: 80px auto 80px;
+  grid-template-areas: "header header header" "main main sidebar" "footer footer footer";
+  height: 100vh;
+  max-height: 100%;
+  width: 100vw;
+  max-width: 100%;
+}
+
+header {
+  grid-area: header;
+  background-color: #457b9d;
+}
+
+main {
+  grid-area: main;
+  background: #e63946;
+}
+
+aside {
+  grid-area: sidebar;
+  background: #1d3557;
+}
+
+footer {
+  grid-area: footer;
 }
 
 /*# sourceMappingURL=style.css.map */

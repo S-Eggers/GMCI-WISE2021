@@ -20,14 +20,10 @@ body
   background: $gray
   font-size: 14px
 
-section
-  width: 100%
-  max-width: 1000px
-
 a
   color: $blue
+  text-decoration: none
   &:hover
-    text-decoration: none
     color: $dark-blue
 
 h1
@@ -108,3 +104,28 @@ input
       font-weight: bold
       text-decoration: none
       color: #519657
+
+.grid
+  display: grid
+  grid-template-columns: 80px auto 20%
+  grid-template-rows: 80px auto 80px
+  grid-template-areas: "header header header" "main main sidebar" "footer footer footer"
+  height: 100vh
+  max-height: 100%
+  width: 100vw
+  max-width: 100%
+
+header
+  grid-area: header
+  background-color: $blue
+
+main
+  grid-area: main
+  background: $red
+
+aside
+  grid-area: sidebar
+  background: $dark-blue
+
+footer
+  grid-area: footer
