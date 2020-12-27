@@ -146,3 +146,102 @@ input
     // background: $dark-blue
   footer
     // grid-area: footer
+
+
+.filter
+  margin: 1em
+  overflow: auto
+  width: 100%
+
+  #search
+    margin-bottom: 25px
+
+.invisible
+  display: none !important
+
+.groups
+  width: 100%
+  margin: 1em
+
+  border-bottom: 4px solid $blue
+  background: white
+
+
+  .table-header, .group
+    width: 100%
+    display: grid
+    grid-template-columns: repeat(auto-fit, minmax(30px, 1fr))
+    height: 5em
+    padding: 1.5em
+    font-size: larger
+
+
+  .table-header
+    background-color: $light-blue
+    border-bottom: 2px solid $blue
+
+    font-weight: bolder
+
+
+  .group
+    border-bottom: 2px solid $blue
+
+  .group:nth-child(odd)
+    background: $gray
+
+.checked
+  color: $red
+
+.group-detail
+  padding: 2em
+  display: grid
+  gap: 1em
+  width: 100%
+  height: 100%
+  grid-template-columns: 30% 70%
+  grid-template-rows: 15% 85%
+
+  >*
+    background-color: white
+    border-bottom: 4px solid $blue
+    padding: 1em
+
+  .name
+    grid-row: 1 / 2
+    grid-column: 1 / 2
+
+  .members
+    grid-row: 2/3
+    grid-column: 2/3
+
+  .description
+    grid-row: 2/3
+    grid-column: 1/2
+
+  ul
+    list-style: none
+    font-size: large
+
+  li
+    width: 100%
+    display: grid
+    grid-template-columns: repeat(auto-fit, minmax(30px, 1fr))
+    height: 3em
+    padding: 1em
+
+.button-container
+  height: 10em
+  position: relative
+  width: 100%
+
+  .big-button
+    font-size: x-large
+
+    margin: auto
+    position: absolute
+    top: 50%
+    left: 50%
+    -ms-transform: translate(-50%, -50%)
+    transform: translate(-50%, -50%)
+
+

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="de">
+<!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="style.css" rel="stylesheet" />
+<head>
+    <meta charset="UTF-8">
+    <title>Study Group Finder Login</title>
+</head>
+<body>
+    <div class="grid">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="marketplace.html" class="active">Marktplatz</a></li>
+                    <li><a href="">Meine Gruppen</a></li>
+                    <li><a href="">Profil</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <div class="filter">
+                <label for="filter" style="display: none">Filter</label>
+                <input type="text" id="filter" placeholder="Nach Fach filtern">
+                <button name="search" id="search" onclick="filter()">Suchen</button>
+            </div>
+
+
+            <div class="groups" id="groups">
+                <div class="table-header">
+                    <span>Name</span>
+                    <span>Fach</span>
+                    <span>Mitglieder</span>
+                    <span>Bewertung</span>
+                    <span>Aktionen</span>
+                </div>
+                <div class="group">
+                    <span>G1</span>
+                    <span class="lecture">AnaA</span>
+                    <span>3/6</span>
+                    <span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                    </span>
+                    <a href="groupdetail.html" class="button">Details</a>
+                </div>
+                <div class="group">
+                    <span>Analyse20</span>
+                    <span class="lecture">SWP</span>
+                    <span>6/6</span>
+                    <span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                    </span>
+                    <a href="groupdetail.html" class="button">Details</a>
+                </div>
+                <div class="group">
+                    <span>NoName</span>
+                    <span class="lecture">GET</span>
+                    <span>1/6</span>
+                    <span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                    </span>
+                    <a href="groupdetail.html" class="button">Details</a>
+                </div>
+                <div class="group">
+                    <span>Beste Gruppe</span>
+                    <span class="lecture">GET</span>
+                    <span>3/6</span>
+                    <span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star "></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </span>
+                    <a href="groupdetail.html" class="button">Details</a>
+                </div>
+                <div class="group">
+                    <span>AnaA Gruppe</span>
+                    <span class="lecture">AnaA</span>
+                    <span>3/6</span>
+                    <span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </span>
+                    <a href="groupdetail.html" class="button">Details</a>
+                </div>
+            </div>
+    
+        </main>
+        <aside>
+    
+        </aside>
+        <footer>
+    
+        </footer>
+    </div>
+    
+</body>
+<script>
+    function reset(groups) {
+        let rows = groups.children
+        for (const row of rows) {
+            row.classList.remove('invisible');
+        }
+    }
+    function filter() {
+        let filter = document.getElementById('filter').value
+        let groups = document.getElementById('groups')
+        let rows = groups.children
+
+        if (filter === "") {
+            reset(groups);
+        }
+        else {
+            reset(groups)
+            for (const row of rows) {
+                if (row.className === "group") {
+                    let lecture = row.getElementsByClassName("lecture").item(0).innerHTML
+                    if (lecture !== filter) {
+                        console.log(lecture);
+                        console.log(row);
+                        row.classList.toggle('invisible');
+                    }
+
+
+                }
+            }
+        }
+    }
+</script>
+</html>
