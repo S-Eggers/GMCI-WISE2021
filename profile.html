@@ -138,7 +138,7 @@
     }
     
     async function detectAction() {
-        await sleep(150)        //necessary to "fix" race condition
+        await sleep(200)        //necessary to "fix" race condition
         if(studyFile.value.length)  {
             alert('Studienverlauf erfolgreich hochgeladen')
             document.getElementById("courseofstudies-not-uploaded").style.visibility = "hidden";
