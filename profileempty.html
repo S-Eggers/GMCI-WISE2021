@@ -51,23 +51,22 @@
           height: 3em;
           padding: 1em;
         }
-
-        .button-container-small {
-            height: 10em;
-            position: relative;
-            width: 100%;
+        #courseofstudies-uploaded {
+            visibility: hidden;
+        }
+        #courseofstudies-not-uploaded {
+            visibility: visible;
         }
     </style>
 </head>
 <body>
-    <!--Test-->
 <div class="grid">
     <header>
         <nav>
             <ul>
                 <li><a href="marketplace.html">Marktplatz</a></li>
                 <li><a href="" >Meine Gruppen</a></li>
-                <li><a href="profile.html" class="active">Profil</a></li>
+                <li><a href="profileempty.html" class="active">Profil</a></li>
             </ul>
         </nav>
     </header>
@@ -101,10 +100,15 @@
                 <br>
                 <p>---</p>
             </div>
-            <div class="courseofstudies">
+            <div class="courseofstudies" id="courseofstudies-not-uploaded">
                 <h2>Studienvelauf</h2>
                 <br>
-                <p>---</p>
+                <p>Kein Studienverlauf hochgeladen</p>
+            </div>
+            <div class="courseofstudies" id="courseofstudies-uploaded">
+                <h2>Studienvelauf</h2>
+                <br>
+                <p>Zuletzt aktualisiert am 01.01.2020</p>
                 <div class="button-container">
                     <button class="big-button">Download</button>
                 </div>
@@ -133,10 +137,21 @@
         document.body.onfocus = detectAction
     }
     
-    function detectAction() {
-        if(studyFile.value.length) alert('Nichts hochgeladen')
-        else alert('Studienverlauf erfolgreich hochgeladen')
+    async function detectAction() {
+        await sleep(200)        //necessary to "fix" race condition
+        if(studyFile.value.length)  {
+            alert('Studienverlauf erfolgreich hochgeladen')
+            document.getElementById("courseofstudies-not-uploaded").style.visibility = "hidden";
+            document.getElementById("courseofstudies-uploaded").style.visibility = "visible";
+        }
+        else {
+            alert('Nichts hochgeladen')
+        }
         document.body.onfocus = null
+    }
+
+    function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
     }
 </script>
 </html>
