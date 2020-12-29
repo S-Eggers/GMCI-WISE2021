@@ -57,6 +57,12 @@
             position: relative;
             width: 100%;
         }
+        #courseofstudies-uploaded {
+            visibility: hidden;
+        }
+        #courseofstudies-not-uploaded {
+            visibility: visible;
+        }
     </style>
 </head>
 <body>
@@ -101,10 +107,15 @@
                 <br>
                 <p>Hier ist mein Xing Username: Peter Schmeter</p>
             </div>
-            <div class="courseofstudies">
+            <div class="courseofstudies" id="courseofstudies-not-uploaded">
                 <h2>Studienvelauf</h2>
                 <br>
-                <p>Zuletzt akutalisiert am 01.01.2020</p>
+                <p>Kein Studienverlauf hochgeladen</p>
+            </div>
+            <div class="courseofstudies" id="courseofstudies-uploaded">
+                <h2>Studienvelauf</h2>
+                <br>
+                <p>Zuletzt aktualisiert am 01.01.2020</p>
                 <div class="button-container">
                     <button class="big-button">Download</button>
                 </div>
@@ -133,10 +144,21 @@
         document.body.onfocus = detectAction
     }
     
-    function detectAction() {
-        if(studyFile.value.length) alert('Nichts hochgeladen')
-        else alert('Studienverlauf erfolgreich hochgeladen')
+    async function detectAction() {
+        await sleep(200)        //necessary to "fix" race condition
+        if(studyFile.value.length)  {
+            alert('Studienverlauf erfolgreich hochgeladen')
+            document.getElementById("courseofstudies-not-uploaded").style.visibility = "hidden";
+            document.getElementById("courseofstudies-uploaded").style.visibility = "visible";
+        }
+        else {
+            alert('Nichts hochgeladen')
+        }
         document.body.onfocus = null
+    }
+
+    function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
     }
 </script>
 </html>
