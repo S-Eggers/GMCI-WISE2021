@@ -3,7 +3,61 @@
 <link href="style.css" rel="stylesheet" />
 <head>
     <meta charset="UTF-8">
-    <title>Study Group Finder</title>
+    <title>Study user Finder</title>
+
+    <style>
+        .user-detail {
+          padding: 2em;
+          display: grid;
+          gap: 1em;
+          width: 100%;
+          height: 100%;
+          grid-template-columns: 33.33% 33.33% 33.33%;
+          grid-template-rows: 33.33% 33.33% 33.33%;
+        }
+        .user-detail > * {
+          background-color: white;
+          border-bottom: 4px solid #457b9d;
+          padding: 1em;
+        }
+        .user-detail .name {
+          grid-row: 1/2;
+          grid-column: 1/2;
+        }
+        .user-detail .biography {
+          grid-row: 1/3;
+          grid-column: 2/3;
+        }
+        .user-detail .description {
+          grid-row: 2/3;
+          grid-column: 1/2;
+        }
+        .user-detail .contact {
+          grid-row: 1/2;
+          grid-column: 3/4;
+        }
+        .user-detail .courseofstudies {
+          grid-row: 2/3;
+          grid-column: 3/4;
+        }
+        .user-detail ul {
+          list-style: none;
+          font-size: large;
+        }
+        .user-detail li {
+          width: 100%;
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(30px, 1fr));
+          height: 3em;
+          padding: 1em;
+        }
+
+        .button-container-small {
+            height: 10em;
+            position: relative;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
     <!--Test-->
@@ -18,56 +72,51 @@
         </nav>
     </header>
     <main>
-        <div class="group-detail">
+        <div class="user-detail">
             <div class="name">
                 <h1>Max Mustermann</h1>
+                <img src="empty_profile_picture.png">
             </div>
+
             <div class="description">
                 <h2>Studiengang:</h2>
                 <br>
                 <p>Informatik</p>
                 <br>
                 <h2>Semester:</h2>
-                <p>5</p>
-            </div>
-            <div class="members">
-                <h2>Mitglieder</h2>
                 <br>
-                <ul>
-                    <li><span>Max Mustermann</span>
-                        <span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star"></span>
-                            <span class="fa fa-star"></span>
-                        </span>
-                    </li>
-                    <li><span>Sabine Musterfrau</span>
-                        <span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star"></span>
-                        </span>
-                    </li>
-                    <li><span>Herbert Beispielmann</span>
-                        <span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                            <span class="fa fa-star checked"></span>
-                        </span>
-                    </li>
-                </ul>
+                <p>5</p>
+                <br>
+                <h2>Alter:</h2>
+                <br>
+                <p>22</p>
+            </div>
+            <div class="biography">
+                <h2>Biographie</h2>
+                <br>
+                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+            </div>
+            <div class="contact">
+                <h2>Kontakt</h2>
+                <br>
+                <p>Hier ist mein Xing Username: Peter Schmeter</p>
+            </div>
+            <div class="courseofstudies">
+                <h2>Studienvelauf</h2>
+                <br>
+                <p>Zuletzt akutalisiert am 01.01.2020</p>
+                <div class="button-container">
+                    <button class="big-button">Download</button>
+                </div>
             </div>
         </div>
     </main>
     <aside>
         <div class="button-container">
-            <button class="big-button">zum Studienverlauf</button>
+            <button class="big-button">Profil bearbeiten</button>
+        </div>
+        <div class="button-container">
+            <button class="big-button">Studienverlauf hochladen</button>
         </div>
     </aside>
     <footer>
