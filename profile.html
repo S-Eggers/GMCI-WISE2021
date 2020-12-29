@@ -115,8 +115,9 @@
         <div class="button-container">
             <button class="big-button">Profil bearbeiten</button>
         </div>
+        <input type="file" id="study-file" style="display: none;">
         <div class="button-container">
-            <button class="big-button">Studienverlauf hochladen</button>
+            <button class="big-button" id="upload" onclick='document.getElementById("study-file").click()'>Studienverlauf hochladen</button>
         </div>
     </aside>
     <footer>
@@ -124,4 +125,18 @@
     </footer>
 </div>
 </body>
+<script>
+    var studyFile = document.getElementById('study-file')
+    studyFile.onclick = waitForAction
+
+    function waitForAction() {
+        document.body.onfocus = detectAction
+    }
+    
+    function detectAction() {
+        if(studyFile.value.length) alert('Nichts hochgeladen')
+        else alert('Studienverlauf erfolgreich hochgeladen')
+        document.body.onfocus = null
+    }
+</script>
 </html>
