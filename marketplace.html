@@ -119,7 +119,7 @@
         }
     }
     function filter() {
-        let filter = document.getElementById('filter').value
+        let filter = document.getElementById('filter').value.toUpperCase()
         let groups = document.getElementById('groups')
         let rows = groups.children
 
@@ -130,14 +130,12 @@
             reset(groups)
             for (const row of rows) {
                 if (row.className === "group") {
-                    let lecture = row.getElementsByClassName("lecture").item(0).innerHTML
-                    if (lecture !== filter) {
+                    let lecture = row.getElementsByClassName("lecture").item(0).innerHTML.toUpperCase()
+                    if (!lecture.startsWith(filter)) {
                         console.log(lecture);
                         console.log(row);
                         row.classList.toggle('invisible');
                     }
-
-
                 }
             }
         }
