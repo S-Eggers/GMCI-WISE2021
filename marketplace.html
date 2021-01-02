@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="de">
-<!-- Add icon library -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="style.css" rel="stylesheet" />
 <head>
     <meta charset="UTF-8">
-    <title>Study Group Finder Login</title>
+    <title>Marktplatz - Study Group Finder</title>
 </head>
 <body>
     <div class="grid">
         <header>
             <nav>
                 <ul>
+                    <li class="logo">Study Group Finder</li>
                     <li><a href="marketplace.html" class="active">Marktplatz</a></li>
-                    <li><a href="">Meine Gruppen</a></li>
-                    <li><a href="">Profil</a></li>
+                    <li><a href="backend.html">Meine Gruppen</a></li>
+                    <li><a href="profileempty.html">Profil</a></li>
                 </ul>
             </nav>
         </header>
@@ -100,16 +100,22 @@
                     <a href="groupdetail.html" class="button">Details</a>
                 </div>
             </div>
-    
+
         </main>
         <aside>
-    
+            <div class="group-detail mini-profile">
+                <div>
+                    <h1>Max Mustermann</h1>
+                    <img src="empty_profile_picture.png">
+                    <a href="index.html" class="button">Logout</a>
+                </div>
+            </div>
         </aside>
         <footer>
-    
+            <div>&copy; 2021 The Wise Beavers</div>
         </footer>
     </div>
-    
+
 </body>
 <script>
     function reset(groups) {
