@@ -21,7 +21,11 @@
         <main>
             <div class="filter">
                 <label for="filter" style="display: none">Filter</label>
-                <input type="text" id="filter" placeholder="Nach Fach filtern">
+                <input type="text" id="filter" placeholder="Nach Name filtern">
+                <select class="button" id="select" onclick=changeFilter()>
+                    <option value="Name">Filter: Name</option>
+                    <option value="Fach">Filter: Fach</option>
+                </select>
                 <button name="search" id="search" onclick="filter()">Suchen</button>
             </div>
 
@@ -35,7 +39,7 @@
                     <span>Aktionen</span>
                 </div>
                 <div class="group">
-                    <span>G1</span>
+                    <span class="name">G1</span>
                     <span class="lecture">AnaA</span>
                     <span>3/6</span>
                     <span>
@@ -51,7 +55,7 @@
                     </span>
                 </div>
                 <div class="group">
-                    <span>Analyse20</span>
+                    <span class="name">Analyse20</span>
                     <span class="lecture">SWP</span>
                     <span>6/6</span>
                     <span>
@@ -67,7 +71,7 @@
                     </span>
                 </div>
                 <div class="group">
-                    <span>NoName</span>
+                    <span class="name">NoName</span>
                     <span class="lecture">GET</span>
                     <span>1/6</span>
                     <span>
@@ -83,7 +87,7 @@
                     </span>
                 </div>
                 <div class="group">
-                    <span>Beste Gruppe</span>
+                    <span class="name">Beste Gruppe</span>
                     <span class="lecture">GET</span>
                     <span>3/6</span>
                     <span>
@@ -99,7 +103,7 @@
                     </span>
                 </div>
                 <div class="group">
-                    <span>AnaA Gruppe</span>
+                    <span class="name">AnaA Gruppe</span>
                     <span class="lecture">AnaA</span>
                     <span>3/6</span>
                     <span>
@@ -152,9 +156,16 @@
             reset(groups)
             for (const row of rows) {
                 if (row.className === "group") {
-                    let lecture = row.getElementsByClassName("lecture").item(0).innerHTML.toUpperCase()
-                    if (!lecture.startsWith(filter)) {
-                        console.log(lecture);
+                    let selected = document.getElementById("select").value
+                    let item
+                    if (selected === "Fach") {
+                        item = row.getElementsByClassName("lecture").item(0).innerHTML.toUpperCase()
+                    } else if (selected === "Name") {
+                        item = row.getElementsByClassName("name").item(0).innerHTML.toUpperCase()
+                    } 
+
+                    if (!item.startsWith(filter)) {
+                        console.log(item);
                         console.log(row);
                         row.classList.toggle('invisible');
                     }
@@ -167,5 +178,10 @@
         document.getElementById("join").classList.add("active");
         document.getElementById("join").innerHTML = name + " beigetreten!";
     }
+
+    function changeFilter() {
+        document.getElementById("filter").placeholder = "Nach " + document.getElementById("select").value + " filtern"
+    }
+
 </script>
 </html>
