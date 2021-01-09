@@ -45,7 +45,10 @@
                         <span class="fa fa-star checked"></span>
                         <span class="fa fa-star"></span>
                     </span>
-                    <a href="groupdetail.html" class="button">Details</a>
+                    <span>
+                        <a href="groupdetail.html" class="button">Details</a>
+                        <a class="button" onclick='join("Gruppe G1")'>Gruppe beitreten</a> 
+                    </span>
                 </div>
                 <div class="group">
                     <span>Analyse20</span>
@@ -58,7 +61,10 @@
                         <span class="fa fa-star checked"></span>
                         <span class="fa fa-star checked"></span>
                     </span>
-                    <a href="groupdetail.html" class="button">Details</a>
+                    <span>
+                        <a href="groupdetail.html" class="button">Details</a>
+                        <a class="button" onclick='join("Gruppe Analse20")'>Gruppe beitreten</a> 
+                    </span>
                 </div>
                 <div class="group">
                     <span>NoName</span>
@@ -71,7 +77,10 @@
                         <span class="fa fa-star checked"></span>
                         <span class="fa fa-star"></span>
                     </span>
-                    <a href="groupdetail.html" class="button">Details</a>
+                    <span>
+                        <a href="groupdetail.html" class="button">Details</a>
+                        <a class="button" onclick='join("Gruppe NoName")'>Gruppe beitreten</a> 
+                    </span>
                 </div>
                 <div class="group">
                     <span>Beste Gruppe</span>
@@ -84,7 +93,10 @@
                         <span class="fa fa-star"></span>
                         <span class="fa fa-star"></span>
                     </span>
-                    <a href="groupdetail.html" class="button">Details</a>
+                    <span>
+                        <a href="groupdetail.html" class="button">Details</a>
+                        <a class="button" onclick='join("Beste Gruppe")'>Gruppe beitreten</a> 
+                    </span>
                 </div>
                 <div class="group">
                     <span>AnaA Gruppe</span>
@@ -97,7 +109,10 @@
                         <span class="fa fa-star"></span>
                         <span class="fa fa-star"></span>
                     </span>
-                    <a href="groupdetail.html" class="button">Details</a>
+                    <span>
+                        <a href="groupdetail.html" class="button">Details</a>
+                        <a class="button" onclick='join("AnaA Gruppe")'>Gruppe beitreten</a> 
+                    </span>
                 </div>
             </div>
 
@@ -110,6 +125,7 @@
                     <a href="index.html" class="button">Logout</a>
                 </div>
             </div>
+            <div id="join"></div>
         </aside>
         <footer>
             <div>&copy; 2021 The Wise Beavers</div>
@@ -145,6 +161,11 @@
                 }
             }
         }
+    }
+
+    function join(name) {
+        document.getElementById("join").classList.add("active");
+        document.getElementById("join").innerHTML = name + " beigetreten!";
     }
 </script>
 </html>
