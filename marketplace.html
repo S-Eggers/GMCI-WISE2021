@@ -1,171 +1,272 @@
 <!DOCTYPE html>
 <html lang="de">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link href="style.css" rel="stylesheet" />
+<link href="style.css" rel="stylesheet"/>
 <head>
     <meta charset="UTF-8">
     <title>Marktplatz - Study Group Finder</title>
 </head>
 <body>
-    <div class="grid">
-        <header>
-            <nav>
-                <ul>
-                    <li class="logo">Study Group Finder</li>
-                    <li><a href="marketplace.html" class="active">Marktplatz</a></li>
-                    <li><a href="backend.html">Meine Gruppen</a></li>
-                    <li><a href="profileempty.html">Profil</a></li>
-                </ul>
-            </nav>
-        </header>
-        <main>
-            <div class="filter">
-                <label for="filter" style="display: none">Filter</label>
-                <input type="text" id="filter" placeholder="Nach Fach filtern">
-                <button name="search" id="search" onclick="filter()">Suchen</button>
-            </div>
-
-
-            <div class="groups" id="groups">
-                <div class="table-header">
-                    <span>Name</span>
-                    <span>Fach</span>
-                    <span>Mitglieder</span>
-                    <span>Bewertung</span>
-                    <span>Aktionen</span>
-                </div>
-                <div class="group">
-                    <span>G1</span>
-                    <span class="lecture">AnaA</span>
-                    <span>3/6</span>
-                    <span>
+<div class="grid">
+    <header>
+        <nav>
+            <ul>
+                <li class="logo">Study Group Finder</li>
+                <li><a href="marketplace.html" class="active">Marktplatz</a></li>
+                <li><a href="backend.html">Meine Gruppen</a></li>
+                <li><a href="profileempty.html">Profil</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="filter">
+            <label for="filter" style="display: none">Filter</label>
+            <input type="text" id="filter" placeholder="Nach Fach filtern">
+            <button name="search" id="search" onclick="filter()">Suchen</button>
+        </div>
+        <div class="outer">
+            <!--
+          <div class="outer-groups">
+              <table>
+                  <thead>
+                  <tr>
+                      <td>Name</td>
+                      <td>Fach</td>
+                      <td>Mitglieder</td>
+                      <td>Bewertung</td>
+                      <td>Aktionen</td>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                      <td>G1</td>
+                      <td class="lecture">AnaA</td>
+                      <td>3/6</td>
+                      <td>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star"></span>
+                      </td>
+                      <td>
+                          <a href="groupdetail.html" class="button">Details</a>
+                          <a class="button" onclick='join("Gruppe G1")'>Gruppe beitreten</a>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td>Analyse20</td>
+                      <td class="lecture">SWP</td>
+                      <td>6/6</td>
+                      <td>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                      </td>
+                      <td>
+                          <a href="groupdetail.html" class="button">Details</a>
+                          <a class="button" onclick='join("Gruppe Analse20")'>Gruppe beitreten</a>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td>NoName</td>
+                      <td class="lecture">GET</td>
+                      <td>1/6</td>
+                      <td>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star"></span>
+                      </td>
+                      <td>
+                          <a href="groupdetail.html" class="button">Details</a>
+                          <a class="button" onclick='join("Gruppe NoName")'>Gruppe beitreten</a>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td>Beste Gruppe</td>
+                      <td class="lecture">GET</td>
+                      <td>3/6</td>
+                      <td>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star "></span>
+                          <span class="fa fa-star"></span>
+                          <span class="fa fa-star"></span>
+                      </td>
+                      <td>
+                          <a href="groupdetail.html" class="button">Details</a>
+                          <a class="button" onclick='join("Beste Gruppe")'>Gruppe beitreten</a>
+                      </td>
+                  </tr>
+                  <tr>
+                      <td>AnaA Gruppe</td>
+                      <td class="lecture">AnaA</td>
+                      <td>3/6</td>
+                      <td>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star"></span>
+                          <span class="fa fa-star"></span>
+                      </td>
+                      <td>
+                          <a href="groupdetail.html" class="button">Details</a>
+                          <a class="button" onclick='join("AnaA Gruppe")'>Gruppe beitreten</a>
+                      </td>
+                  </tr>
+                  </tbody>
+              </table>
+          </div>
+          -->
+            <div class="outer-groups">
+                <div class="groups" id="groups">
+                    <div class="table-header">
+                        <span>Name</span>
+                        <span>Fach</span>
+                        <span>Mitglieder</span>
+                        <span>Bewertung</span>
+                        <span>Aktionen</span>
+                    </div>
+                    <div class="group">
+                        <span>G1</span>
+                        <span class="lecture">AnaA</span>
+                        <span>3/6</span>
+                        <span>
                         <span class="fa fa-star checked"></span>
                         <span class="fa fa-star checked"></span>
                         <span class="fa fa-star checked"></span>
                         <span class="fa fa-star checked"></span>
                         <span class="fa fa-star"></span>
                     </span>
-                    <span>
+                        <span>
                         <a href="groupdetail.html" class="button">Details</a>
-                        <a class="button" onclick='join("Gruppe G1")'>Gruppe beitreten</a> 
+                        <a class="button" onclick='join("Gruppe G1")'>Gruppe beitreten</a>
                     </span>
-                </div>
-                <div class="group">
-                    <span>Analyse20</span>
-                    <span class="lecture">SWP</span>
-                    <span>6/6</span>
-                    <span>
+                    </div>
+                    <div class="group">
+                        <span>Analyse20</span>
+                        <span class="lecture">SWP</span>
+                        <span>6/6</span>
+                        <span>
                         <span class="fa fa-star checked"></span>
                         <span class="fa fa-star checked"></span>
                         <span class="fa fa-star checked"></span>
                         <span class="fa fa-star checked"></span>
                         <span class="fa fa-star checked"></span>
                     </span>
-                    <span>
+                        <span>
                         <a href="groupdetail.html" class="button">Details</a>
-                        <a class="button" onclick='join("Gruppe Analse20")'>Gruppe beitreten</a> 
+                        <a class="button" onclick='join("Gruppe Analse20")'>Gruppe beitreten</a>
                     </span>
-                </div>
-                <div class="group">
-                    <span>NoName</span>
-                    <span class="lecture">GET</span>
-                    <span>1/6</span>
-                    <span>
+                    </div>
+                    <div class="group">
+                        <span>NoName</span>
+                        <span class="lecture">GET</span>
+                        <span>1/6</span>
+                        <span>
                         <span class="fa fa-star checked"></span>
                         <span class="fa fa-star checked"></span>
                         <span class="fa fa-star checked"></span>
                         <span class="fa fa-star checked"></span>
                         <span class="fa fa-star"></span>
                     </span>
-                    <span>
+                        <span>
                         <a href="groupdetail.html" class="button">Details</a>
-                        <a class="button" onclick='join("Gruppe NoName")'>Gruppe beitreten</a> 
+                        <a class="button" onclick='join("Gruppe NoName")'>Gruppe beitreten</a>
                     </span>
-                </div>
-                <div class="group">
-                    <span>Beste Gruppe</span>
-                    <span class="lecture">GET</span>
-                    <span>3/6</span>
-                    <span>
+                    </div>
+                    <div class="group">
+                        <span>Beste Gruppe</span>
+                        <span class="lecture">GET</span>
+                        <span>3/6</span>
+                        <span>
                         <span class="fa fa-star checked"></span>
                         <span class="fa fa-star checked"></span>
                         <span class="fa fa-star "></span>
                         <span class="fa fa-star"></span>
                         <span class="fa fa-star"></span>
                     </span>
-                    <span>
+                        <span>
                         <a href="groupdetail.html" class="button">Details</a>
-                        <a class="button" onclick='join("Beste Gruppe")'>Gruppe beitreten</a> 
+                        <a class="button" onclick='join("Beste Gruppe")'>Gruppe beitreten</a>
                     </span>
-                </div>
-                <div class="group">
-                    <span>AnaA Gruppe</span>
-                    <span class="lecture">AnaA</span>
-                    <span>3/6</span>
-                    <span>
+                    </div>
+                    <div class="group">
+                        <span>AnaA Gruppe</span>
+                        <span class="lecture">AnaA</span>
+                        <span>3/6</span>
+                        <span>
                         <span class="fa fa-star checked"></span>
                         <span class="fa fa-star checked"></span>
                         <span class="fa fa-star checked"></span>
                         <span class="fa fa-star"></span>
                         <span class="fa fa-star"></span>
                     </span>
-                    <span>
+                        <span>
                         <a href="groupdetail.html" class="button">Details</a>
-                        <a class="button" onclick='join("AnaA Gruppe")'>Gruppe beitreten</a> 
+                        <a class="button" onclick='join("AnaA Gruppe")'>Gruppe beitreten</a>
                     </span>
+                    </div>
                 </div>
-            </div>
 
-        </main>
-        <aside>
-            <div class="group-detail mini-profile">
-                <div>
-                    <h1>Max Mustermann</h1>
-                    <img src="empty_profile_picture.png">
-                    <a href="index.html" class="button">Logout</a>
-                </div>
             </div>
-            <div class="response" id="join"></div>
-        </aside>
-        <footer>
-            <div>&copy; 2021 The Wise Beavers</div>
-        </footer>
-    </div>
-
+        </div>
+    </main>
+    <aside>
+        <div class="group-detail mini-profile">
+            <div>
+                <h1>Max Mustermann</h1>
+                <img src="empty_profile_picture.png">
+                <a href="index.html" class="button">Logout</a>
+            </div>
+        </div>
+    </aside>
+    <footer>
+        <div>&copy; 2021 The Wise Beavers</div>
+    </footer>
+</div>
+<div class="response-modal" id="join"></div>
 </body>
 <script>
-    function reset(groups) {
-        let rows = groups.children
-        for (const row of rows) {
-            row.classList.remove('invisible');
-        }
+  function reset(groups) {
+    let rows = groups.children
+    for (const row of rows) {
+      row.classList.remove('invisible');
     }
-    function filter() {
-        let filter = document.getElementById('filter').value.toUpperCase()
-        let groups = document.getElementById('groups')
-        let rows = groups.children
+  }
 
-        if (filter === "") {
-            reset(groups);
-        }
-        else {
-            reset(groups)
-            for (const row of rows) {
-                if (row.className === "group") {
-                    let lecture = row.getElementsByClassName("lecture").item(0).innerHTML.toUpperCase()
-                    if (!lecture.startsWith(filter)) {
-                        console.log(lecture);
-                        console.log(row);
-                        row.classList.toggle('invisible');
-                    }
-                }
-            }
-        }
-    }
+  function filter() {
+    let filter = document.getElementById('filter').value.toUpperCase()
+    let groups = document.getElementById('groups')
+    let rows = groups.children
 
-    function join(name) {
-        document.getElementById("join").classList.add("active");
-        document.getElementById("join").innerHTML = name + " beigetreten!";
+    if (filter === "") {
+      reset(groups);
+    } else {
+      reset(groups)
+      for (const row of rows) {
+        if (row.className === "group") {
+          let lecture = row.getElementsByClassName("lecture").item(0).innerHTML.toUpperCase()
+          if (!lecture.startsWith(filter)) {
+            console.log(lecture);
+            console.log(row);
+            row.classList.toggle('invisible');
+          }
+        }
+      }
     }
+  }
+
+  function join(name) {
+    document.getElementById("join").classList.add("active");
+    document.getElementById("join").innerHTML = name + " beigetreten!";
+    setTimeout(function () {
+      document.getElementById("join").classList.remove("active");
+    }, 2000)
+  }
 </script>
 </html>

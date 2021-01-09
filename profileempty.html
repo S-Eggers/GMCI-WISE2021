@@ -5,7 +5,7 @@
     <link href="style.css" rel="stylesheet" />
     <title>Mein Profil - Study Group Finder</title>
 </head>
-<body>
+<body class="profile">
 <div class="grid">
     <header>
         <nav>
@@ -17,7 +17,7 @@
             </ul>
         </nav>
     </header>
-    <main>
+    <main class="outer-padding">
         <div class="user-detail">
             <div class="name">
                 <h1>Max Mustermann</h1>
@@ -60,20 +60,13 @@
                     <button class="big-button">Download</button>
                 </div>
             </div>
+            <div class="profile-buttons">
+                <button onclick="window.location.href='profile.html'" class="big-button">Profil bearbeiten</button>
+                <input type="file" id="study-file" style="display: none;">
+                <button class="big-button" id="upload" onclick='document.getElementById("study-file").click()'>Studienverlauf hochladen</button>
+            </div>
         </div>
     </main>
-    <aside>
-        <div class="button-container">
-            <button onclick="window.location.href='profile.html'" class="big-button">Profil bearbeiten</button>
-        </div>
-        <input type="file" id="study-file" style="display: none;" accept="application/pdf">
-        <div class="button-container">
-            <button class="big-button" id="upload" onclick='document.getElementById("study-file").click()'>Studienverlauf hochladen</button>
-        </div>
-        <div class="button-container" id="delete-container" style="visibility: hidden;">
-            <button class="big-button" onclick="deleteStudyFile()">Studienverlauf löschen</button>
-        </div>
-    </aside>
     <footer>
         <div>&copy; 2021 The Wise Beavers</div>
     </footer>
@@ -92,7 +85,9 @@
         if(studyFile.value.length)  {
             alert('Studienverlauf erfolgreich hochgeladen')
             document.getElementById("courseofstudies-not-uploaded").style.visibility = "hidden";
+            document.getElementById("courseofstudies-not-uploaded").style.display = "none";
             document.getElementById("courseofstudies-uploaded").style.visibility = "visible";
+            document.getElementById("courseofstudies-uploaded").style.display = "block";
             document.getElementById("delete-container").style.visibility = "visible";
         }
         else {

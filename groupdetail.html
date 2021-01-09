@@ -29,6 +29,9 @@
                 <h3>Beschreibung</h3>
                 <p>Dies ist eine Beispielgruppe</p>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At consequuntur corporis, culpa cum cupiditate ducimus eligendi illo incidunt ipsum minus natus nihil pariatur quaerat qui sint, ullam voluptas voluptates, voluptatum.</p>
+                <div class="button-container">
+                    <button class="big-button" onclick="join()">Gruppe beitreten</button>
+                </div>
             </div>
             <div class="members">
                 <h2>Mitglieder</h2>
@@ -64,6 +67,7 @@
                 </ul>
             </div>
         </div>
+        <br>
     </main>
     <aside>
         <div class="group-detail mini-profile">
@@ -73,20 +77,20 @@
                 <a href="index.html" class="button">Logout</a>
             </div>
         </div>
-        <div class="button-container">
-            <button class="big-button" onclick='join()'>Gruppe beitreten</button>
-        </div>
-        <div class="response" id="join"></div>
     </aside>
     <footer>
         <div>&copy; 2021 The Wise Beavers</div>
     </footer>
 </div>
+<div class="response-modal" id="join"></div>
 </body>
 <script>
-    function join() {
-        document.getElementById("join").classList.add("active");
-        document.getElementById("join").innerHTML = "Gruppe G1 beigetreten!";
-    }
+  function join() {
+    document.getElementById("join").classList.add("active");
+    document.getElementById("join").innerHTML = "Gruppe G1 beigetreten!";
+    setTimeout(function () {
+      document.getElementById("join").classList.remove("active");
+    }, 2000)
+  }
 </script>
 </html>
