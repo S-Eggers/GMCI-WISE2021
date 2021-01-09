@@ -310,3 +310,36 @@ input
 
 #courseofstudies-not-uploaded
   visibility: visible
+
+
+@media (prefers-color-scheme: dark)
+  *
+    color: white
+  body
+    background-color: $dark-gray
+
+  .group-detail
+    >*
+      background-color: gray
+
+  .groups
+    background-color: gray
+
+    .group:nth-child(odd)
+      background-color: #4b4f54
+
+  input
+    background-color: gray
+    color: white
+    &::placeholder
+      color: $blue
+    &:focus
+      border-color: $dark-blue
+      color: $dark-blue
+      background-color: $gray
+    &::placeholder
+      color: white
+
+  .user-detail
+    >*
+      background-color: gray
