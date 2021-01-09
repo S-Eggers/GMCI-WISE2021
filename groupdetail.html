@@ -74,12 +74,19 @@
             </div>
         </div>
         <div class="button-container">
-            <button class="big-button">Gruppe beitreten</button>
+            <button class="big-button" onclick='join()'>Gruppe beitreten</button>
         </div>
+        <div class="response" id="join"></div>
     </aside>
     <footer>
         <div>&copy; 2021 The Wise Beavers</div>
     </footer>
 </div>
 </body>
+<script>
+    function join() {
+        document.getElementById("join").classList.add("active");
+        document.getElementById("join").innerHTML = "Gruppe G1 beigetreten!";
+    }
+</script>
 </html>
