@@ -66,9 +66,12 @@
         <div class="button-container">
             <button onclick="window.location.href='profile.html'" class="big-button">Profil bearbeiten</button>
         </div>
-        <input type="file" id="study-file" style="display: none;">
+        <input type="file" id="study-file" style="display: none;" accept="application/pdf">
         <div class="button-container">
             <button class="big-button" id="upload" onclick='document.getElementById("study-file").click()'>Studienverlauf hochladen</button>
+        </div>
+        <div class="button-container" id="delete-container" style="visibility: hidden;">
+            <button class="big-button" onclick="deleteStudyFile()">Studienverlauf löschen</button>
         </div>
     </aside>
     <footer>
@@ -90,6 +93,7 @@
             alert('Studienverlauf erfolgreich hochgeladen')
             document.getElementById("courseofstudies-not-uploaded").style.visibility = "hidden";
             document.getElementById("courseofstudies-uploaded").style.visibility = "visible";
+            document.getElementById("delete-container").style.visibility = "visible";
         }
         else {
             alert('Nichts hochgeladen')
@@ -99,6 +103,13 @@
 
     function sleep(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    function deleteStudyFile(ms) {
+        document.getElementById("courseofstudies-not-uploaded").style.visibility = "visible";
+        document.getElementById("courseofstudies-uploaded").style.visibility = "hidden";
+        document.getElementById("delete-container").style.visibility = "hidden";
+        alert('Studienverlauf erfolgreich gelöscht')
     }
 </script>
 </html>
