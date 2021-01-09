@@ -377,4 +377,45 @@ input:focus::placeholder {
   visibility: visible;
 }
 
+@media (prefers-color-scheme: dark) {
+  * {
+    color: white;
+  }
+
+  body {
+    background-color: #454545;
+  }
+
+  .group-detail > * {
+    background-color: gray;
+  }
+
+  .groups {
+    background-color: gray;
+  }
+  .groups .group:nth-child(odd) {
+    background-color: #4b4f54;
+  }
+
+  input {
+    background-color: gray;
+    color: white;
+  }
+  input::placeholder {
+    color: #457b9d;
+  }
+  input:focus {
+    border-color: #1d3557;
+    color: #1d3557;
+    background-color: #eee;
+  }
+  input::placeholder {
+    color: white;
+  }
+
+  .user-detail > * {
+    background-color: gray;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */
