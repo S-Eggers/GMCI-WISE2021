@@ -24,195 +24,101 @@
             <input type="text" id="filter" placeholder="Nach Fach filtern">
             <button name="search" id="search" onclick="filter()">Suchen</button>
         </div>
-        <div class="outer">
-            <!--
-          <div class="outer-groups">
-              <table>
-                  <thead>
-                  <tr>
-                      <td>Name</td>
-                      <td>Fach</td>
-                      <td>Mitglieder</td>
-                      <td>Bewertung</td>
-                      <td>Aktionen</td>
-                  </tr>
-                  </thead>
-                  <tbody>
-                  <tr>
-                      <td>G1</td>
-                      <td class="lecture">AnaA</td>
-                      <td>3/6</td>
-                      <td>
-                          <span class="fa fa-star checked"></span>
-                          <span class="fa fa-star checked"></span>
-                          <span class="fa fa-star checked"></span>
-                          <span class="fa fa-star checked"></span>
-                          <span class="fa fa-star"></span>
-                      </td>
-                      <td>
-                          <a href="groupdetail.html" class="button">Details</a>
-                          <a class="button" onclick='join("Gruppe G1")'>Gruppe beitreten</a>
-                      </td>
-                  </tr>
-                  <tr>
-                      <td>Analyse20</td>
-                      <td class="lecture">SWP</td>
-                      <td>6/6</td>
-                      <td>
-                          <span class="fa fa-star checked"></span>
-                          <span class="fa fa-star checked"></span>
-                          <span class="fa fa-star checked"></span>
-                          <span class="fa fa-star checked"></span>
-                          <span class="fa fa-star checked"></span>
-                      </td>
-                      <td>
-                          <a href="groupdetail.html" class="button">Details</a>
-                          <a class="button" onclick='join("Gruppe Analse20")'>Gruppe beitreten</a>
-                      </td>
-                  </tr>
-                  <tr>
-                      <td>NoName</td>
-                      <td class="lecture">GET</td>
-                      <td>1/6</td>
-                      <td>
-                          <span class="fa fa-star checked"></span>
-                          <span class="fa fa-star checked"></span>
-                          <span class="fa fa-star checked"></span>
-                          <span class="fa fa-star checked"></span>
-                          <span class="fa fa-star"></span>
-                      </td>
-                      <td>
-                          <a href="groupdetail.html" class="button">Details</a>
-                          <a class="button" onclick='join("Gruppe NoName")'>Gruppe beitreten</a>
-                      </td>
-                  </tr>
-                  <tr>
-                      <td>Beste Gruppe</td>
-                      <td class="lecture">GET</td>
-                      <td>3/6</td>
-                      <td>
-                          <span class="fa fa-star checked"></span>
-                          <span class="fa fa-star checked"></span>
-                          <span class="fa fa-star "></span>
-                          <span class="fa fa-star"></span>
-                          <span class="fa fa-star"></span>
-                      </td>
-                      <td>
-                          <a href="groupdetail.html" class="button">Details</a>
-                          <a class="button" onclick='join("Beste Gruppe")'>Gruppe beitreten</a>
-                      </td>
-                  </tr>
-                  <tr>
-                      <td>AnaA Gruppe</td>
-                      <td class="lecture">AnaA</td>
-                      <td>3/6</td>
-                      <td>
-                          <span class="fa fa-star checked"></span>
-                          <span class="fa fa-star checked"></span>
-                          <span class="fa fa-star checked"></span>
-                          <span class="fa fa-star"></span>
-                          <span class="fa fa-star"></span>
-                      </td>
-                      <td>
-                          <a href="groupdetail.html" class="button">Details</a>
-                          <a class="button" onclick='join("AnaA Gruppe")'>Gruppe beitreten</a>
-                      </td>
-                  </tr>
-                  </tbody>
-              </table>
-          </div>
-          -->
-            <div class="outer-groups">
-                <div class="groups" id="groups">
-                    <div class="table-header">
-                        <span>Name</span>
-                        <span>Fach</span>
-                        <span>Mitglieder</span>
-                        <span>Bewertung</span>
-                        <span>Aktionen</span>
-                    </div>
-                    <div class="group">
-                        <span>G1</span>
-                        <span class="lecture">AnaA</span>
-                        <span>3/6</span>
-                        <span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star"></span>
-                    </span>
-                        <span>
-                        <a href="groupdetail.html" class="button">Details</a>
-                        <a class="button" onclick='join("Gruppe G1")'>Gruppe beitreten</a>
-                    </span>
-                    </div>
-                    <div class="group">
-                        <span>Analyse20</span>
-                        <span class="lecture">SWP</span>
-                        <span>6/6</span>
-                        <span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                    </span>
-                        <span>
-                        <a href="groupdetail.html" class="button">Details</a>
-                        <a class="button" onclick='join("Gruppe Analse20")'>Gruppe beitreten</a>
-                    </span>
-                    </div>
-                    <div class="group">
-                        <span>NoName</span>
-                        <span class="lecture">GET</span>
-                        <span>1/6</span>
-                        <span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star"></span>
-                    </span>
-                        <span>
-                        <a href="groupdetail.html" class="button">Details</a>
-                        <a class="button" onclick='join("Gruppe NoName")'>Gruppe beitreten</a>
-                    </span>
-                    </div>
-                    <div class="group">
-                        <span>Beste Gruppe</span>
-                        <span class="lecture">GET</span>
-                        <span>3/6</span>
-                        <span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star "></span>
-                        <span class="fa fa-star"></span>
-                        <span class="fa fa-star"></span>
-                    </span>
-                        <span>
-                        <a href="groupdetail.html" class="button">Details</a>
-                        <a class="button" onclick='join("Beste Gruppe")'>Gruppe beitreten</a>
-                    </span>
-                    </div>
-                    <div class="group">
-                        <span>AnaA Gruppe</span>
-                        <span class="lecture">AnaA</span>
-                        <span>3/6</span>
-                        <span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star"></span>
-                        <span class="fa fa-star"></span>
-                    </span>
-                        <span>
-                        <a href="groupdetail.html" class="button">Details</a>
-                        <a class="button" onclick='join("AnaA Gruppe")'>Gruppe beitreten</a>
-                    </span>
-                    </div>
-                </div>
-
+        <div class="padding0-2-2">
+        <div class="responsive-table">
+                <table>
+                    <thead>
+                    <tr>
+                        <td>Name</td>
+                        <td>Fach</td>
+                        <td>Mitglieder</td>
+                        <td>Bewertung</td>
+                        <td>Aktionen</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>G1</td>
+                        <td class="lecture">AnaA</td>
+                        <td>3/6</td>
+                        <td>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                        </td>
+                        <td>
+                            <a href="groupdetail.html" class="button">Details</a>
+                            <a class="button" onclick='join("Gruppe G1")'>Gruppe beitreten</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Analyse20</td>
+                        <td class="lecture">SWP</td>
+                        <td>6/6</td>
+                        <td>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                        </td>
+                        <td>
+                            <a href="groupdetail.html" class="button">Details</a>
+                            <a class="button" onclick='join("Gruppe Analse20")'>Gruppe beitreten</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>NoName</td>
+                        <td class="lecture">GET</td>
+                        <td>1/6</td>
+                        <td>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                        </td>
+                        <td>
+                            <a href="groupdetail.html" class="button">Details</a>
+                            <a class="button" onclick='join("Gruppe NoName")'>Gruppe beitreten</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Beste Gruppe</td>
+                        <td class="lecture">GET</td>
+                        <td>3/6</td>
+                        <td>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star "></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </td>
+                        <td>
+                            <a href="groupdetail.html" class="button">Details</a>
+                            <a class="button" onclick='join("Beste Gruppe")'>Gruppe beitreten</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>AnaA Gruppe</td>
+                        <td class="lecture">AnaA</td>
+                        <td>3/6</td>
+                        <td>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </td>
+                        <td>
+                            <a href="groupdetail.html" class="button">Details</a>
+                            <a class="button" onclick='join("AnaA Gruppe")'>Gruppe beitreten</a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </main>

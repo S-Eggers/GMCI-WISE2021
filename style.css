@@ -133,7 +133,7 @@ input:focus::placeholder {
 }
 @media (max-width: 768px) {
   .profile .grid {
-    grid-template-rows: 80px auto 80px;
+    grid-template-rows: 60px auto 80px;
   }
 }
 
@@ -155,13 +155,14 @@ input:focus::placeholder {
 @media (max-width: 768px) {
   .grid {
     grid-template-columns: 80px auto 0;
-    grid-template-rows: 80px auto 280px 80px;
+    grid-template-rows: 60px auto 280px 80px;
     grid-template-areas: "header header header" "main main main" "sidebar sidebar sidebar" "footer footer footer";
   }
 }
 .grid header {
   grid-area: header;
   background-color: #457b9d;
+  overflow: hidden;
 }
 .grid header nav ul {
   display: flex;
@@ -177,6 +178,12 @@ input:focus::placeholder {
   padding: 20px;
   flex-grow: 1;
 }
+@media (max-width: 768px) {
+  .grid header nav ul li {
+    padding: 10px;
+    height: 60px;
+  }
+}
 .grid header nav ul li.logo {
   display: block;
   height: 80px;
@@ -189,6 +196,13 @@ input:focus::placeholder {
   font-weight: bold;
   flex-grow: 0;
 }
+@media (max-width: 768px) {
+  .grid header nav ul li.logo {
+    height: 60px;
+    line-height: 40px;
+    padding-left: 5px;
+  }
+}
 .grid header nav ul li a {
   display: inline-block;
   height: 100%;
@@ -197,6 +211,11 @@ input:focus::placeholder {
   border-radius: 5px;
   line-height: 20px;
   white-space: nowrap;
+}
+@media (max-width: 576px) {
+  .grid header nav ul li a {
+    padding: 10px 5px;
+  }
 }
 .grid header nav ul li a.active {
   background: #eee;
@@ -232,53 +251,50 @@ input:focus::placeholder {
   display: none !important;
 }
 
-.outer {
+.padding0-2-2 {
   padding: 0 2em 2em;
 }
 
-.outer-groups {
+.responsive-table {
   position: relative;
-}
-.outer-groups table {
   display: inline-block;
-  vertical-align: top;
-  min-width: 100%;
-  white-space: nowrap;
+  width: 100%;
   overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+.responsive-table table {
+  width: 100%;
   border-collapse: collapse;
-  table-layout: fixed;
   border-bottom: 4px solid #457b9d;
 }
-.outer-groups .groups {
-  display: table;
-  min-width: 100%;
-  white-space: nowrap;
+@media (max-width: 992px) {
+  .responsive-table table {
+    table-layout: fixed;
+  }
 }
-.outer-groups .groups .table-header, .outer-groups .groups .group {
-  display: table-row;
-  height: 4em;
-  font-size: larger;
-  line-height: 2em;
-}
-.outer-groups .groups .table-header span, .outer-groups .groups .group span {
-  display: table-cell;
-  padding: 1em;
-}
-.outer-groups .groups .table-header span span.fa, .outer-groups .groups .group span span.fa {
-  display: inline-block;
-  padding: 0;
-}
-.outer-groups .groups .table-header {
+.responsive-table table thead {
   background-color: rgba(69, 123, 157, 0.5);
   border-bottom: 2px solid #457b9d;
   font-weight: bolder;
 }
-.outer-groups .groups .group {
+.responsive-table table tbody tr {
   border-bottom: 2px solid #457b9d;
   background: white;
 }
-.outer-groups .groups .group:nth-child(odd) {
+.responsive-table table tbody tr:last-of-type {
+  border-bottom: none;
+}
+.responsive-table table tbody tr:nth-child(odd) {
   background: #eee;
+}
+.responsive-table table tr {
+  height: 4em;
+  font-size: larger;
+  line-height: 2em;
+}
+.responsive-table table td {
+  padding: 1em;
 }
 
 .response {
@@ -350,8 +366,6 @@ input:focus::placeholder {
 .group-detail.mini-profile div img {
   display: block;
   margin: 0 auto 1em;
-}
-.group-detail.mini-profile div .button {
   font-size: 12px;
   padding: 5px;
 }
@@ -393,6 +407,12 @@ input:focus::placeholder {
 }
 .button-container .big-button {
   font-size: x-large;
+}
+@media (max-width: 768px) {
+  .button-container .big-button {
+    font-size: 14px;
+    padding: 10px;
+  }
 }
 
 .outer-padding {

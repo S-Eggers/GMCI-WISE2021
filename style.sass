@@ -116,7 +116,7 @@ input
   .grid
     grid-template-areas: "header header header" "main main main" "footer footer footer"
     @media (max-width: $md)
-      grid-template-rows: 80px auto 80px
+      grid-template-rows: 60px auto 80px
 
 .grid
   display: grid
@@ -131,12 +131,13 @@ input
     grid-template-columns: 80px auto 30%
   @media (max-width: $md)
     grid-template-columns: 80px auto 0
-    grid-template-rows: 80px auto 280px  80px
+    grid-template-rows: 60px auto 280px  80px
     grid-template-areas: "header header header" "main main main" "sidebar sidebar sidebar"  "footer footer footer"
 
   header
     grid-area: header
     background-color: $blue
+    overflow: hidden // hide overflowing "logo" letters :D
     nav
       ul
         display: flex
@@ -150,6 +151,9 @@ input
           height: 80px
           padding: 20px
           flex-grow: 1
+          @media (max-width: $md)
+            padding: 10px
+            height: 60px
           &.logo
             display: block
             height: 80px
@@ -161,6 +165,10 @@ input
             padding-bottom: 10px
             font-weight: bold
             flex-grow: 0
+            @media (max-width: $md)
+              height: 60px
+              line-height: 40px
+              padding-left: 5px
           a
             display: inline-block
             height: 100%
@@ -169,6 +177,8 @@ input
             border-radius: 5px
             line-height: 20px
             white-space: nowrap
+            @media (max-width: $sm)
+              padding: 10px 5px
             &.active
               background: $gray
               color: $dark-blue
@@ -195,43 +205,39 @@ input
 .invisible
   display: none !important
 
-.outer
+.padding0-2-2
   padding: 0 2em 2em
-.outer-groups
+.responsive-table
   position: relative
+  display: inline-block
+  width: 100%
+  overflow-x: auto
+  overflow-y: hidden
+  white-space: nowrap
   table
-    display: inline-block
-    vertical-align: top
-    min-width: 100%
-    white-space: nowrap
-    overflow-x: auto
+    width: 100%
     border-collapse: collapse
-    table-layout: fixed
     border-bottom: 4px solid $blue
-  .groups
-    display: table
-    min-width: 100%
-    white-space: nowrap
-    .table-header, .group
-      display: table-row
-      height: 4em
-      font-size: larger
-      line-height: 2em
-      span
-        display: table-cell
-        padding: 1em
-        span.fa
-          display: inline-block
-          padding: 0
-    .table-header
+    @media (max-width: $lg)
+      table-layout: fixed
+    thead
       background-color: rgba($blue, .5)
       border-bottom: 2px solid $blue
       font-weight: bolder
-    .group
-      border-bottom: 2px solid $blue
-      background: white
-    .group:nth-child(odd)
-      background: $gray
+    tbody
+      tr
+        border-bottom: 2px solid $blue
+        background: white
+        &:last-of-type
+          border-bottom: none
+        &:nth-child(odd)
+          background: $gray
+    tr
+      height: 4em
+      font-size: larger
+      line-height: 2em
+    td
+      padding: 1em
 
 .response
   display: none
@@ -290,7 +296,7 @@ input
       img
         display: block
         margin: 0 auto 1em
-      .button
+
         font-size: 12px
         padding: 5px
   .name
@@ -324,6 +330,9 @@ input
   align-items: center
   .big-button
     font-size: x-large
+    @media (max-width: $md)
+      font-size: 14px
+      padding: 10px
 
 .outer-padding
   padding: 2em
