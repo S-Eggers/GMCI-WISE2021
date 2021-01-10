@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="de">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link href="style.css" rel="stylesheet" />
+<link href="style.css" rel="stylesheet"/>
 <head>
     <meta charset="UTF-8">
     <title>Marktplatz - Study Group Finder</title>
@@ -21,11 +21,15 @@
     <main>
         <div class="filter">
             <label for="filter" style="display: none">Filter</label>
-            <input type="text" id="filter" placeholder="Nach Fach filtern">
+            <input type="text" id="filter" placeholder="Nach Name filtern">
+            <select class="button" id="select" onchange="changeFilter()">
+                <option value="Name">Filter: Name</option>
+                <option value="Fach">Filter: Fach</option>
+            </select>
             <button name="search" id="search" onclick="filter()">Suchen</button>
         </div>
         <div class="padding0-2-2">
-        <div class="responsive-table">
+            <div class="responsive-table">
                 <table>
                     <thead>
                     <tr>
@@ -36,9 +40,9 @@
                         <td>Aktionen</td>
                     </tr>
                     </thead>
-                    <tbody>
-                    <tr>
-                        <td>G1</td>
+                    <tbody id="groups">
+                    <tr class="group">
+                        <td class="name">G1</td>
                         <td class="lecture">AnaA</td>
                         <td>3/6</td>
                         <td>
@@ -53,8 +57,8 @@
                             <a class="button" onclick='join("Gruppe G1")'>Gruppe beitreten</a>
                         </td>
                     </tr>
-                    <tr>
-                        <td>Analyse20</td>
+                    <tr class="group">
+                        <td class="name">Analyse20</td>
                         <td class="lecture">SWP</td>
                         <td>6/6</td>
                         <td>
@@ -69,8 +73,8 @@
                             <a class="button" onclick='join("Gruppe Analse20")'>Gruppe beitreten</a>
                         </td>
                     </tr>
-                    <tr>
-                        <td>NoName</td>
+                    <tr class="group">
+                        <td class="name">NoName</td>
                         <td class="lecture">GET</td>
                         <td>1/6</td>
                         <td>
@@ -85,8 +89,8 @@
                             <a class="button" onclick='join("Gruppe NoName")'>Gruppe beitreten</a>
                         </td>
                     </tr>
-                    <tr>
-                        <td>Beste Gruppe</td>
+                    <tr class="group">
+                        <td class="name">Beste Gruppe</td>
                         <td class="lecture">GET</td>
                         <td>3/6</td>
                         <td>
@@ -101,8 +105,8 @@
                             <a class="button" onclick='join("Beste Gruppe")'>Gruppe beitreten</a>
                         </td>
                     </tr>
-                    <tr>
-                        <td>AnaA Gruppe</td>
+                    <tr class="group">
+                        <td class="name">AnaA Gruppe</td>
                         <td class="lecture">AnaA</td>
                         <td>3/6</td>
                         <td>
@@ -138,41 +142,41 @@
 <div class="response-modal" id="join"></div>
 </body>
 <script>
-    function reset(groups) {
-        let rows = groups.children
-        for (const row of rows) {
-            row.classList.remove('invisible');
-        }
+  function reset(groups) {
+    let rows = groups.children
+    for (const row of rows) {
+      row.classList.remove('invisible');
     }
-    function filter() {
-        let filter = document.getElementById('filter').value.toUpperCase()
-        let groups = document.getElementById('groups')
-        let rows = groups.children
+  }
 
-        if (filter === "") {
-            reset(groups);
-        }
-        else {
-            reset(groups)
-            for (const row of rows) {
-                if (row.className === "group") {
-                    let selected = document.getElementById("select").value
-                    let item
-                    if (selected === "Fach") {
-                        item = row.getElementsByClassName("lecture").item(0).innerHTML.toUpperCase()
-                    } else if (selected === "Name") {
-                        item = row.getElementsByClassName("name").item(0).innerHTML.toUpperCase()
-                    }
+  function filter() {
+    let filter = document.getElementById('filter').value.toUpperCase();
+    let groups = document.getElementById('groups');
+    let rows = groups.children;
 
-                    if (!item.startsWith(filter)) {
-                        console.log(item);
-                        console.log(row);
-                        row.classList.toggle('invisible');
-                    }
-                }
-            }
+    if (filter === "") {
+      reset(groups);
+    } else {
+      reset(groups);
+      for (const row of rows) {
+        if (row.className === "group") {
+          let selected = document.getElementById("select").value;
+          let item;
+          if (selected === "Fach") {
+            item = row.getElementsByClassName("lecture").item(0).innerHTML.toUpperCase();
+          } else if (selected === "Name") {
+            item = row.getElementsByClassName("name").item(0).innerHTML.toUpperCase();
+          }
+
+          if (!item.startsWith(filter)) {
+            console.log(item);
+            console.log(row);
+            row.classList.toggle('invisible');
+          }
         }
+      }
     }
+  }
 
   function join(name) {
     document.getElementById("join").classList.add("active");
@@ -181,9 +185,10 @@
       document.getElementById("join").classList.remove("active");
     }, 2000)
   }
-    function changeFilter() {
-        document.getElementById("filter").placeholder = "Nach " + document.getElementById("select").value + " filtern"
-    }
+
+  function changeFilter() {
+    document.getElementById("filter").placeholder = "Nach " + document.getElementById("select").value + " filtern"
+  }
 
 </script>
 </html>

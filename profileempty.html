@@ -62,8 +62,17 @@
             </div>
             <div class="profile-buttons">
                 <button onclick="window.location.href='profile.html'" class="big-button">Profil bearbeiten</button>
+                <br>
+                <br>
                 <input type="file" id="study-file" style="display: none;">
-                <button class="big-button" id="upload" onclick='document.getElementById("study-file").click()'>Studienverlauf hochladen</button>
+                <button class="big-button" id="upload" onclick='document.getElementById("study-file").click()'>
+                    Studienverlauf hochladen
+                </button>
+                <br>
+                <br>
+                <button class="big-button" id="delete" onclick="deleteStudyFile()" style="visibility: hidden">
+                    Studienverlauf löschen
+                </button>
             </div>
         </div>
     </main>
@@ -71,40 +80,29 @@
         <div>&copy; 2021 The Wise Beavers</div>
     </footer>
 </div>
-</body>
 <script>
-    var studyFile = document.getElementById('study-file')
-    studyFile.onclick = waitForAction
-
-    function waitForAction() {
-        document.body.onfocus = detectAction
+  let studyFile = document.getElementById('study-file');
+  studyFile.onchange = function () {
+    if (studyFile.value.length) {
+      document.getElementById("courseofstudies-not-uploaded").style.visibility = "hidden";
+      document.getElementById("courseofstudies-not-uploaded").style.display = "none";
+      document.getElementById("courseofstudies-uploaded").style.visibility = "visible";
+      document.getElementById("courseofstudies-uploaded").style.display = "block";
+      document.getElementById("delete").style.visibility = "visible";
+      alert('Studienverlauf erfolgreich hochgeladen')
+    } else {
+      alert('Nichts hochgeladen')
     }
+  }
 
-    async function detectAction() {
-        await sleep(200)        //necessary to "fix" race condition
-        if(studyFile.value.length)  {
-            alert('Studienverlauf erfolgreich hochgeladen')
-            document.getElementById("courseofstudies-not-uploaded").style.visibility = "hidden";
-            document.getElementById("courseofstudies-not-uploaded").style.display = "none";
-            document.getElementById("courseofstudies-uploaded").style.visibility = "visible";
-            document.getElementById("courseofstudies-uploaded").style.display = "block";
-            document.getElementById("delete-container").style.visibility = "visible";
-        }
-        else {
-            alert('Nichts hochgeladen')
-        }
-        document.body.onfocus = null
-    }
-
-    function sleep(ms) {
-        return new Promise(resolve => setTimeout(resolve, ms));
-    }
-
-    function deleteStudyFile(ms) {
-        document.getElementById("courseofstudies-not-uploaded").style.visibility = "visible";
-        document.getElementById("courseofstudies-uploaded").style.visibility = "hidden";
-        document.getElementById("delete-container").style.visibility = "hidden";
-        alert('Studienverlauf erfolgreich gelöscht')
-    }
+  function deleteStudyFile() {
+    document.getElementById("courseofstudies-not-uploaded").style.visibility = "visible";
+    document.getElementById("courseofstudies-not-uploaded").style.display = "block";
+    document.getElementById("courseofstudies-uploaded").style.visibility = "hidden";
+    document.getElementById("courseofstudies-uploaded").style.display = "none";
+    document.getElementById("delete").style.visibility = "hidden";
+    alert('Studienverlauf erfolgreich gelöscht')
+  }
 </script>
+</body>
 </html>
