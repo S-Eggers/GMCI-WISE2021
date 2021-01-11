@@ -282,11 +282,21 @@ input:focus::placeholder {
   border-bottom: 2px solid #457b9d;
   background: white;
 }
+@media (prefers-color-scheme: dark) {
+  .responsive-table table tbody tr {
+    background: rgba(255, 255, 255, 0.25);
+  }
+}
 .responsive-table table tbody tr:last-of-type {
   border-bottom: none;
 }
 .responsive-table table tbody tr:nth-child(odd) {
   background: #eee;
+}
+@media (prefers-color-scheme: dark) {
+  .responsive-table table tbody tr:nth-child(odd) {
+    background: rgba(238, 238, 238, 0.25);
+  }
 }
 .responsive-table table tr {
   height: 4em;

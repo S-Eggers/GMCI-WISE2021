@@ -228,10 +228,14 @@ input
       tr
         border-bottom: 2px solid $blue
         background: white
+        @media (prefers-color-scheme: dark)
+          background: rgba(white, .25)
         &:last-of-type
           border-bottom: none
         &:nth-child(odd)
           background: $gray
+          @media (prefers-color-scheme: dark)
+            background: rgba($gray, .25)
     tr
       height: 4em
       font-size: larger
