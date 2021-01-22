@@ -449,9 +449,11 @@ input:focus::placeholder {
   .user-detail {
     display: flex;
     flex-wrap: wrap;
+    gap: 0;
   }
   .user-detail div {
     width: 100%;
+    margin-bottom: 1em;
   }
 }
 .user-detail > * {
