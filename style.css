@@ -257,14 +257,12 @@ input:focus::placeholder {
 
 .responsive-table {
   position: relative;
+  width: 536px;
   display: inline-block;
-  width: 100%;
   overflow-x: auto;
   overflow-y: hidden;
-  white-space: nowrap;
 }
 .responsive-table table {
-  width: 100%;
   border-collapse: collapse;
   border-bottom: 4px solid #457b9d;
 }
@@ -305,8 +303,22 @@ input:focus::placeholder {
 }
 .responsive-table table td {
   padding: 1em;
+  min-width: 130px;
+}
+.responsive-table table td:last-of-type {
+  min-width: 320px;
 }
 
+@media (min-width: 768px) {
+  .responsive-table {
+    width: 728px;
+  }
+}
+@media (min-width: 992px) {
+  .responsive-table {
+    width: 992px;
+  }
+}
 .response {
   display: none;
   visibility: hidden;

@@ -209,13 +209,11 @@ input
   padding: 0 2em 2em
 .responsive-table
   position: relative
+  width: $sm - 40px
   display: inline-block
-  width: 100%
   overflow-x: auto
   overflow-y: hidden
-  white-space: nowrap
   table
-    width: 100%
     border-collapse: collapse
     border-bottom: 4px solid $blue
     @media (max-width: $lg)
@@ -242,6 +240,17 @@ input
       line-height: 2em
     td
       padding: 1em
+      min-width: 130px
+    td:last-of-type
+      min-width: 320px
+
+@media (min-width: $md)
+  .responsive-table
+    width: $md - 40px
+
+@media (min-width: $lg)
+  .responsive-table
+    width: $lg
 
 .response
   display: none
